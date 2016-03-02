@@ -42,5 +42,22 @@ function getChildrenForCat($catId) {
  		$smartyRs[] = $row;
  	}
  	return $smartyRs;
- } 
+ }
+
+/**
+ * Подключить данные категории по id
+ * 
+ * @param integer $catId ID категории
+ * @return array масив строка категорий
+ */
+function getCatById($catId) {
+	$catId = intval($catId);
+	$sql = "SELECT * 
+			FROM categories
+			WHERE
+			id = '{$catid}'";
+	$rs = mysql_query($sql);
+	return mysql_fetch_assoc($rs);		
+} 
+
 

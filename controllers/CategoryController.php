@@ -18,4 +18,6 @@ include_once '../models/ProductsModel.php';
 function indexAction($smarty) {
 	$catId = isset($_GET['id']) ? $_GET['id'] : null;
 	if(!$catId) exit();
+
+	$rsCategory = getCatById($catId);
 }
