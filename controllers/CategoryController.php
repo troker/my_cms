@@ -20,4 +20,12 @@ function indexAction($smarty) {
 	if(!$catId) exit();
 
 	$rsCategory = getCatById($catId);
+	//Если главные категории то показываем дочерние
+	//Иначе показываем товар
+	if($rsCategory[$parent_id] == 0) {
+		$rsChildCals = getChildrenForCat($catId);
+	}
+	else {
+		$rsProducts = getProductsByCat($catId)
+	}
 }

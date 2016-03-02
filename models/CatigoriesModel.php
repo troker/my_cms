@@ -55,8 +55,9 @@ function getCatById($catId) {
 	$sql = "SELECT * 
 			FROM categories
 			WHERE
-			id = '{$catid}'";
+			id = '{$catId}'";
 	$rs = mysql_query($sql);
+
 	return mysql_fetch_assoc($rs);		
 } 
 
